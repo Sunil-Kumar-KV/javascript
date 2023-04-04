@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+
+	<script type="text/javascript">
+		function SayHello(){
+			message='Welcome to my website '
+			+ document.forms["myform"].firstname.value + ' '
+			+ document.forms["myform"].lastname.value + ' '
+			+ document.forms["myform"].age.value + ' '
+			+ document.forms["myform"].occupation.value + ' ';
+
+			if (document.forms["myform"].male.checked)
+			{
+				message += 'Male'
+			}
+			else
+			{
+				message += 'Female'
+			}
+
+			alert(message);
+			document.getElementById("myemptypragraphtags").innerHTML = message;
+		}
+	
+	</script>
+</head>
+<body>
+<form id="myform">
+	<lable for="firstname">First Name: </lable><input type="text" id="firstname" name="Name" placeholder="Enter first Name"><p>
+	<lable for="lastname"> Last Name: </lable><input type="text" id="lastname" name="Name" placeholder="Enter last Name"><p>
+	<lable for="age">age: </lable><input type="text" id="age" name="Name" placeholder="Enter age">
+	<p>
+
+	<lable for="gender">Gender: </lable><br>
+	<input type="radio" id="male" name="gender" value="Male" checked>Male<br>
+	<input type="radio" id="female" name="gender" value="Female">Female<p>
+
+	<label for="occupation">Occupation:</label>
+	<select name="occupation">
+		<option value="Tinker">Tinker</option>
+		<option value="Tailor">Tailor</option>
+		<option value="Soldier">Soldier</option>
+		<option value="Soilor">Soilor</option>
+		<option value="Astronaut">Astronaut</option>
+		<option value="Programmer">Programmer</option>
+		<option value="Teacher">Teacher</option>
+	</select><p>
+
+	<button type="button" onclick="SayHello()">Submit</button>
+</form>
+<p id="myemptypragraphtags"></p>
+</body>
+</html>
